@@ -4,9 +4,8 @@ parent: Clustering
 ---
 
 ## KNN
-<script type="text/javascript"
-	src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,
-	/javascripts/MathJaxLocal.js">
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
 </script>
 
 $\sqrt{2}$
