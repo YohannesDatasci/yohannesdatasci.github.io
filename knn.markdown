@@ -4,4 +4,9 @@ parent: Clustering
 ---
 
 ## KNN
-<h1>poc</h1>
+<script type="text/javascript"
+	src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,
+	/javascripts/MathJaxLocal.js">
+</script>
+
+$\sqrt{2}$

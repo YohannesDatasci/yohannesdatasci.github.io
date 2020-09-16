@@ -1,7 +1,6 @@
 ---
 title: Clustering
 has_children: true
-permalink: /clustering/
 ---
 
 
