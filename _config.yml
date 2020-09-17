@@ -1,3 +1,7 @@
 title: Anomaly docs
+<<<<<<< HEAD
 remote_theme: pmarsceill/just-the-docs
 footer_content: "Hello folks"
+=======
+remote_theme: pmarsceill/just-the-docs
+>>>>>>> parent of df6dd11... Update _config.yml
