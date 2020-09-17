@@ -49,4 +49,15 @@ The steps of the algorithm are as follows.<br>
 <b>Step 4</b> if cost decreased then repeat 2 and 3 else finish.<br>
 
 As you can see the main flaw of the k-medioids algorithm is that it's time complexity is beyond evil, also the k-medioids fails to cluster non-spehrical data points as it uses compactness as clustering criteria not connectivity.<br>
+
+```python
+
+from sklearn import cluster, datasets
+import matplotlib.pyplot as plt
+circle_dataset_x,circle_dataset_y= datasets.make_circles(n_samples=1000,random_state=42,factor=0.6,noise=0.03)
+kmeans=cluster.KMeans(n_clusters=2,n_init=10,init="random")
+result = kmeans.fit_predict(circle_dataset_x)
+plt.scatter(circle_dataset_x[:,0],circle_dataset_x[:,1],c=result)
+plt.show()
+```
 </body>
