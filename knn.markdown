@@ -50,8 +50,7 @@ The steps of the algorithm are as follows.<br>
 
 As you can see the main flaw of the k-medioids algorithm is that it's time complexity is beyond evil, also the k-medioids fails to cluster non-spehrical data points as it uses compactness as clustering criteria not connectivity.<br>
 
-```python
-
+```
 from sklearn import cluster, datasets
 import matplotlib.pyplot as plt
 circle_dataset_x,circle_dataset_y= datasets.make_circles(n_samples=1000,random_state=42,factor=0.6,noise=0.03)
