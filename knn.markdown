@@ -38,7 +38,7 @@ The kmeans++ initialization would generally result in better clustering like in 
 
 However, this is not the last flaw of the kmeans algorithms. Kmeans also suffers from distance metric inflexibility, meaning that the measure of distance cannot be arbitrary similarity measuer. Secondly kmeans is not robust to outliers as it utilizes mean to obtain the centroids.<br>
 
-To resolve the problem another algorithm was introduced to the game, and k-medioids is its name.<br>
+To resolve the problem another algorithm was introduced to the game, and k-medoids is its name.<br>
 
 As the algorithm uses medians to calculate the medioids it is more robust to the outliers, also due to the algorithm using dissimilarity measure to estimate the medioids, it is not dependant on distance based measures thus it could be arbitrary dissimilarity measure.<br>
 
@@ -48,15 +48,68 @@ The steps of the algorithm are as follows.<br>
 <b>Step 3</b> For each element in cluster, make the element the new centroid, associate each datapoint to the closest medioid and compute the cost.<br>
 <b>Step 4</b> if cost decreased then repeat 2 and 3 else finish.<br>
 
-As you can see the main flaw of the k-medioids algorithm is that it's time complexity is beyond evil, also the k-medioids fails to cluster non-spehrical data points as it uses compactness as clustering criteria not connectivity.<br>
+As you can see the main flaw of the k-medoids algorithm is that it's time complexity is beyond evil, also the k-medoids fails to cluster non-spehrical data points as it uses compactness as clustering criteria not connectivity.<br>
 
 </body>
+Example code of standard kmeans
+
 ```python
 from sklearn import cluster, datasets
 import matplotlib.pyplot as plt
-circle_dataset_x,circle_dataset_y= datasets.make_circles(n_samples=1000,random_state=42,factor=0.6,noise=0.03)
-kmeans=cluster.KMeans(n_clusters=2,n_init=10,init="random")
+circle_dataset_x,circle_dataset_y= datasets.make_blobs(n_samples=2000,random_state=170,cluster_std=[1, 2, 1])
+kmeans=cluster.KMeans(n_clusters=3,n_init=1,init="random")
 result = kmeans.fit_predict(circle_dataset_x)
 plt.scatter(circle_dataset_x[:,0],circle_dataset_x[:,1],c=result)
 plt.show()
 ```
+
+Example of code with repeating kmeans
+
+```python
+from sklearn import cluster, datasets
+import matplotlib.pyplot as plt
+num_inits=1000
+circle_dataset_x,circle_dataset_y= datasets.make_blobs(n_samples=2000,random_state=170,cluster_std=[1, 2, 1])
+kmeans=cluster.KMeans(n_clusters=3,n_init=num_inits,init="random")
+result = kmeans.fit_predict(circle_dataset_x)
+plt.scatter(circle_dataset_x[:,0],circle_dataset_x[:,1],c=result)
+plt.show()
+```
+
+
+
+Example code of standard kmeans with kmeans++ initialization
+
+```python
+from sklearn import cluster, datasets
+import matplotlib.pyplot as plt
+circle_dataset_x,circle_dataset_y= datasets.make_blobs(n_samples=2000,random_state=170,cluster_std=[1, 2, 1])
+kmeans=cluster.KMeans(n_clusters=3,n_init=1,init="k-means++")
+result = kmeans.fit_predict(circle_dataset_x)
+plt.scatter(circle_dataset_x[:,0],circle_dataset_x[:,1],c=result)
+plt.show()
+```
+
+Example of code of k-medoids
+
+```python
+from sklearn_extra.cluster import KMedoids
+import numpy as np
+import matplotlib.pyplot as plt
+circle_dataset_x,circle_dataset_y= datasets.make_blobs(n_samples=2000,random_state=170,cluster_std=[1, 2, 1])
+kmedoids=KMedoids(n_clusters=3,max_iter=1,init="random")
+result = kmedoids.fit_predict(circle_dataset_x)
+plt.scatter(circle_dataset_x[:,0],circle_dataset_x[:,1],c=result)
+plt.show()
+
+```
+
+The results have shown the k-medioids algorithm in general creates worse clusters than kmeans algorithm and requires a significant number of iterations to get to the same quality of clustering. Although the algorithm is robust to noise and can have arbitrary dissimilarity metric.
+
+
+Here are examples of of how k-medoids fails with a single iteration and improves after singinificant number of iterations
+
+<body>
+<img src="images/kmedoidsfail.png">Fails after a single iteration</img>
+<img src="images/kmedoidsgood.png">improves after hundred iteration</img>
+</body>
