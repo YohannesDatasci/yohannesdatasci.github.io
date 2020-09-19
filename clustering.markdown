@@ -4,4 +4,4 @@ has_children: true
 ---
 
 
-Hello let us now talk about clustering algorithms
+General knowledge about the clustering algorithms
