@@ -110,6 +110,6 @@ The results have shown the k-medioids algorithm in general creates worse cluster
 Here are examples of of how k-medoids fails with a single iteration and improves after singinificant number of iterations
 
 <body>
-<img src="images/kmedoidsfail.png">Fails after a single iteration</img>
-<img src="images/kmedoidsgood.png">improves after hundred iteration</img>
+<img src="images/kmedoidsfail.png"></br>Fails after a single iteration
+<img src="images/kmedoidsgood.png"></br>improves after hundred iteration
 </body>
