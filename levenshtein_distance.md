@@ -14,5 +14,5 @@ Levenstein distance is a measure of distance between two string.<br>
 
 Intuitive defintion is the minimum number of modifications required to obtain string b from the given string a<br>
 
-<img src="levenstein_distance.jpg">
+<img src="images/levenstein_distance.jpg">
 </body>
