@@ -1,5 +1,5 @@
 ---
-title: Levenstein Distance
+title: Singular Value decomposition
 parent: Linear Algebra
 ---
 
