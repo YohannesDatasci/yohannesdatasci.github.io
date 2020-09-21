@@ -12,7 +12,7 @@ parent: Clustering
 
 The need for Gaussian Mixture Models comes from the limitations of Kmeans.<br>
 The core problem with Kmeans is that it does not work well with non-spherical data distributions<br>
-<img src="gaussian_mixture_models.gif"><br>
+<img src="images/gaussian_mixture_models.gif"><br>
 
 The idea behind the gaussian mixture models is to simultaneusly fit multiple gaussian distributions to the dataset such that each of them maximizes the probability of the cluster being generated from the give gaussian distribtuions<br>
 The problem here is that the maximum likelyhood estimation cannot be applied to multiple gaussian distributions, thus to estimate the parameters the algorithm has to utlize expectation maximization algorithm to obtain the distribution parameters.
