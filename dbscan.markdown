@@ -42,7 +42,8 @@ It introduces two new cocncepts the core-distance and reachability<br>
 core-distance is the minimum epsilon for which the given core will include minpts number of points<br>
 reachability is the max between euclidean distance to the point q and core-distance for give the point p.<br>
 
-The logic of the algorithm is to produce a hierarchical reachability structure for all the give points in priority order.<br>
+It is important to note that OPTICS by itself is not a clustering algorithm, however, it produces a reachability plot which could be used to sperate the clusters in the data.<br>
+The logic of algorithm is to process the points with priority based on their reachability distance, which uncovers hidden structures in the data and allows to cluster them.
 
 OPTICS itself is not a clustering algoirthm, but it can be converted to so by selecting a treshold value for the hierarchical reachability structure.<br>
 

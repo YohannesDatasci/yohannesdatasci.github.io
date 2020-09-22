@@ -73,14 +73,6 @@ import eif as iso
 import numpy as np
 import matplotlib.pyplot as plt
 
-x_train,y_train,x_test,y_test = generate_data(n_train=10000,n_test=10000,n_features=3,contamination=0.1)
-
-
-x_train,y_train=shuffle(x_train,y_train,random_state=42)
-x_test,y_test=shuffle(x_test,y_test,random_state=42)
-
-eif=iso.iForest(x_train,ntrees=100,sample_size=256,ExtensionLevel=1)
-IF=IsolationForest(random_state=42,contamination=0.1,n_estimators=100)
 
 x_train,y_train,x_test,y_test = generate_data(n_train=10000,n_test=10000,n_features=3,contamination=0.1) # generate anomalous data points
 
