@@ -10,7 +10,7 @@ parent: Anomaly  Detection
 
 <body>
 
-<img src="local_outlier_factor.png">
+<img src="images/local_outlier_factor.png">
 
 The intuitive understanding of the algorithm is to give density estimate to each neighborhoods of each elements, and those elements that have lower density should be considered anomalies.<br><br>
 
