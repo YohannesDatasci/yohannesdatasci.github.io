@@ -30,12 +30,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.neighbors import LocalOutlierFactor
 
-x_train,y_train,x_test,y_test = generate_data(n_train=10000,n_test=10000,n_features=2,contamination=0.1)
+x_train,y_train,x_test,y_test = generate_data(n_train=1000,n_test=1000,n_features=2,contamination=0.1)
 
 
 x_train,y_train=shuffle(x_train,y_train,random_state=42)
 x_test,y_test=shuffle(x_test,y_test,random_state=42)
-y_pred = LocalOutlierFactor(n_neighbors=4).fit_predict(x_train)
+y_pred = LocalOutlierFactor(n_neighbors=400).fit_predict(x_train)
 y_pred = np.where(y_pred==1, 0, 1)
 print(mean_squared_error(y_train,y_pred))
 plt.figure(1)
