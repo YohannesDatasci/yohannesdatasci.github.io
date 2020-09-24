@@ -1,1 +1,1 @@
-Welcome to the anomaly land
+Documentation for anomaly detection techniques

@@ -9,7 +9,7 @@ parent: Anomaly  Detection
 
 The primary problem with LOF is that it is density oriented, thus it is unable to identify structural anomalies such as in the image above<br>
 
-In order to solve this problem the authors of the <a href="https://link.springer.com/chapter/10.1007/3-540-47887-6_53">COF</a> came up with the idea of differente distance measure for LOF<br>
+In order to solve this problem the authors of the <a href="https://link.springer.com/chapter/10.1007/3-540-47887-6_53">COF</a> came up with the idea of different distance measure for LOF<br>
 
 The logic of the algorithm is the following, instead of measuring the euclidean distance between the points to get the k-neighbors like in LOF, we need to measure the distance in the following manner. For the first closest point of the current point add them in the neighborhood, for others measure distance between the closest point in the neiborhood and accordingly add the closest points to the neihborhood. This way the points that are closest to the neighborhood are added which helps to preserve the structural form of the data.
 <br><br>
