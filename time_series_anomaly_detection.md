@@ -109,4 +109,24 @@ for i,j in enumerate(anom_pred):
 plt.show()
 ```
 <body>
+Lesser known technique for anomaly detection is to use connectivity based clustering algorithms for anomaly detection.
 </body>
+```python
+!wget https://raw.githubusercontent.com/jbrownlee/Datasets/master/monthly-sunspots.csv
+from sklearn.cluster import DBSCAN
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df=pd.read_csv("monthly-sunspots.csv")
+
+dbscan=DBSCAN(eps=0.5,min_samples=10)
+dbscan_out=dbscan.fit_predict(df.Sunspots.values.reshape(-1,1))
+
+plt.plot(df.index,df.Sunspots)
+for i,j in enumerate(dbscan_out):
+  if j == -1:
+    plt.plot(df.index.values[i],df.Sunspots.values[i],"g*")
+
+plt.show()
+```
